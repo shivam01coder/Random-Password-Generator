@@ -1,0 +1,27 @@
+import string
+import random
+
+
+## characters to generate password 
+characters = list(string.ascii_letters + string.digits + "!@#$%^&*()")
+
+def generate_random_password():
+	## length of password 
+	length = int(input("Enter password length: "))
+
+	## shuffling the characters
+	random.shuffle(characters)
+	
+	## picking random characters 
+	password = []
+	for i in range(length):
+		password.append(random.choice(characters))
+
+	## shuffling for more strong
+	random.shuffle(password)
+
+	print("".join(password))
+
+
+##call
+generate_random_password()
